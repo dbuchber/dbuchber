@@ -1,16 +1,48 @@
-## Hi there 👋
+## Hi there, im Daniel 👋
 
 <!--
-**dbuchber/dbuchber** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**<YOUR_GITHUB_USERNAME>/<YOUR_GITHUB_USERNAME>** is a ✨ _special_ ✨ repository because its `README.md`
+appears on your GitHub profile.
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+
+Vienna, Austria • BSc Business Informatics @ WU Vienna • Data Science & Production Management • Junior SAP Consultant (MM/PP)
+
+> Currently writing my bachelor thesis on the synergy between **Knowledge Graphs** and **LLMs**.
+
+## Quick Links
+- 💼 LinkedIn: <https://...>
+- 🌐 Website / Portfolio: <https://...>
+- ✉️ Email: <you@domain.tld>
+
+## What I'm working on
+- 🎓 **Bachelor Thesis:** Knowledge Graphs × LLMs (retrieval, grounding, reasoning, hybrid architectures)
+- 🧩 **SAP Consulting:** Materials Management (MM) & Production Planning (PP)
+- 📚 Learning: <graph databases / SPARQL / RAG / evaluation / data engineering>
+
+## Interests
+- Knowledge Graphs, Graph ML, Semantic Search
+- LLM systems (RAG, tool use, evaluation)
+- Production & supply chain processes
+- ERP / SAP S/4HANA (MM, PP)
+- HomeAssistant
+
+## Tech Stack
+- **Languages:** Python, ABAP, <Java>
+- **Data/ML:** pandas, scikit-learn, <PyTorch>, <LangChain/LlamaIndex>
+- **Knowledge Graphs:** <Neo4j>, <RDF/OWL>, <SPARQL>
+- **ERP:** SAP MM, SAP PP, <S/4HANA>
+- **Tools:** Git, Docker, <CI/CD>
+
+## Fun facts
+- ⚡ <fun fact 1>
+- ⚡ <fun fact 2>
+
+<!-- Optional stats -->
+<!--
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=<YOUR_GITHUB_USERNAME>&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=<YOUR_GITHUB_USERNAME>&layout=compact)
 -->
+
+---
+<small>Last updated: <YYYY-MM-DD></small>
