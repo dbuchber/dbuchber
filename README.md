@@ -1,11 +1,5 @@
 ## Hi there, im Daniel 👋
 
-<!--
-**<YOUR_GITHUB_USERNAME>/<YOUR_GITHUB_USERNAME>** is a ✨ _special_ ✨ repository because its `README.md`
-appears on your GitHub profile.
-
-
-
 Vienna, Austria • BSc Business Informatics @ WU Vienna • Data Science & Production Management • Junior SAP Consultant (MM/PP)
 
 > Currently writing my bachelor thesis on the synergy between **Knowledge Graphs** and **LLMs**.
