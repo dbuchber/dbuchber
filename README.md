@@ -33,6 +33,7 @@
 ## Interests
 - Knowledge Graphs, Graph ML, Semantic Search
 - LLM systems (RAG, tool use, evaluation)
+- Agentic Engineering
 - Production & supply chain processes
 - ERP / SAP S/4HANA (MM, PP)
 - HomeAssistant
