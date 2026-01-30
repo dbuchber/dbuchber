@@ -6,17 +6,14 @@
 ![Claude](https://img.shields.io/badge/-Claude-000000?style=flat-square&logo=anthropic)
 ![Cline](https://img.shields.io/badge/-Cline-000000?style=flat-square&logo=cursor)
 ![Local%20LLMs](https://img.shields.io/badge/-Local%20LLMs-000000?style=flat-square&logo=ollama)
-
 ![Python](https://img.shields.io/badge/-Python-000000?style=flat-square&logo=python)
 ![Docker](https://img.shields.io/badge/-Docker-000000?style=flat-square&logo=docker)
 ![Linux](https://img.shields.io/badge/-Linux-000000?style=flat-square&logo=linux)
-
-![Home%20Assistant](https://img.shields.io/badge/-Home%20Assistant-000000?style=flat-square&logo=homeassistant)
-
-![ABAP](https://img.shields.io/badge/-ABAP-000000?style=flat-square&logo=sap&logoColor=white)
-
 ![CLI](https://img.shields.io/badge/-CLI-000000?style=flat-square&logo=gnu-bash)
 ![macOS](https://img.shields.io/badge/-macOS-000000?style=flat-square&logo=apple)
+![Home%20Assistant](https://img.shields.io/badge/-Home%20Assistant-000000?style=flat-square&logo=homeassistant)
+![ABAP](https://img.shields.io/badge/-ABAP-000000?style=flat-square&logo=sap&logoColor=white)
+
 
 > **"Geht ned? Gibts ned!"** — Austrian for: there’s always a solution.
 
@@ -53,4 +50,4 @@
 > “The more you know, the more you know you don't know.” — Aristotle  
 
 ---
-<small>Last updated: <2026-01-03></small>
+<small>Last updated: <2026-01-30></small>
