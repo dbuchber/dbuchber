@@ -34,15 +34,5 @@ Vienna, Austria • BSc Business Informatics @ WU Vienna • Data Science & Prod
 - **ERP:** SAP MM, SAP PP, <S/4HANA>
 - **Tools:** Git, Docker, <CI/CD>
 
-## Fun facts
-- ⚡ <fun fact 1>
-- ⚡ <fun fact 2>
-
-<!-- Optional stats -->
-<!--
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=<YOUR_GITHUB_USERNAME>&show_icons=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=<YOUR_GITHUB_USERNAME>&layout=compact)
--->
-
 ---
 <small>Last updated: <YYYY-MM-DD></small>
