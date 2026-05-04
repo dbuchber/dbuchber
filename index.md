@@ -4,7 +4,9 @@ title: Daniel Buchberger
 description: SAP Logistics Consultant building LLM systems, Knowledge Graphs and AI workflows.
 ---
 
+<script type="application/ld+json">
 {
+  "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://danielbuchberger.at/#person",
   "name": "Daniel Buchberger",
@@ -47,4 +49,6 @@ description: SAP Logistics Consultant building LLM systems, Knowledge Graphs and
   ],
   "description": "Daniel Buchberger combines SAP logistics consulting, business informatics and data science with LLM systems, Knowledge Graphs, RAG, custom AI agents and AI workflow automation."
 }
+</script>
+
 {% include_relative README.md %}
