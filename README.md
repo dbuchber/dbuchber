@@ -1,4 +1,4 @@
-## Hi there, im Daniel 👋
+## Hi there, I'm Daniel 👋
 
 📍**Vienna ↔ Steyr** | 👨‍🎓**BSc Business Informatics @ WU Vienna** | 📊**Data Science & Production Management** | 💼**Junior SAP Logistics Consultant**
 
@@ -21,7 +21,7 @@
 
 ## Quick Links
 - 💼 LinkedIn: https://www.linkedin.com/in/daniel-buchberger-490758178/
-- 🌐 Website / Portfolio: *in work*
+- 🌐 Website / Portfolio: https://danielbuchberger.at
 
 ## What I'm working on
 - 🎓 **Bachelor Thesis:** Knowledge Graphs × LLMs (retrieval, grounding, reasoning, hybrid architectures)

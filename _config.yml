@@ -1,6 +1,5 @@
 title: Daniel Buchberger
 description: SAP Logistics Consultant building LLM systems, Knowledge Graphs and AI workflows.
-theme: minima
-
+url: "https://danielbuchberger.at"
 plugins:
-  - jekyll-seo-tag
+  - jekyll-sitemap
