@@ -6,6 +6,7 @@
   <title>Daniel Buchberger | Applied AI · Knowledge Graphs · Enterprise Systems</title>
   <meta name="description" content="Daniel Buchberger — Business Informatics student at WU Vienna documenting work and research interests around applied AI, knowledge graphs, fullstack development, networking and enterprise systems.">
   <meta name="author" content="Daniel Buchberger">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="canonical" href="https://danielbuchberger.at/">
   <meta property="og:title" content="Daniel Buchberger | Applied AI · Knowledge Graphs · Enterprise Systems">
   <meta property="og:description" content="Business Informatics student documenting work and research interests around applied AI, knowledge graphs, fullstack development and enterprise systems.">
@@ -26,7 +27,6 @@
         "@id": "https://danielbuchberger.at/#person",
         "name": "Daniel Buchberger",
         "url": "https://danielbuchberger.at",
-        "email": "mailto:dbuchber@gmx.at",
         "sameAs": [
           "https://github.com/dbuchber",
           "https://www.linkedin.com/in/daniel-buchberger-490758178/",
@@ -1260,7 +1260,7 @@
           <a class="contact-link" href="https://www.linkedin.com/in/daniel-buchberger-490758178/" target="_blank" rel="noopener">LinkedIn &nearr;</a>
           <a class="contact-link" href="https://github.com/dbuchber" target="_blank" rel="noopener">GitHub &nearr;</a>
           <a class="contact-link" href="https://bsky.app/profile/dbuchber.bsky.social" target="_blank" rel="noopener">Bluesky &nearr;</a>
-          <a class="contact-email" href="mailto:dbuchber@gmx.at">dbuchber@gmx.at</a>
+          <a class="contact-email js-email" data-e="dbuchber" data-d="gmx.at" href="#"></a>
         </div>
       </div>
     </div>
@@ -1284,6 +1284,12 @@
     }, { threshold: 0.08 });
 
     document.querySelectorAll('.fade-up, .stagger').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.js-email').forEach(el => {
+      const addr = el.dataset.e + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      el.textContent = addr;
+    });
   </script>
 
 </body>

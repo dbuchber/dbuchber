@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datenschutzerklärung | Daniel Buchberger</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="robots" content="noindex, nofollow">
   <style>
     :root {
@@ -125,7 +126,7 @@
       <p>
         Daniel Buchberger<br>
         Wien, Österreich<br>
-        E-Mail: <a href="mailto:dbuchber@gmx.at">dbuchber@gmx.at</a>
+        E-Mail: <a class="js-email" data-e="dbuchber" data-d="gmx.at" href="#"></a>
       </p>
     </div>
 
@@ -198,7 +199,7 @@
       </p>
       <p>
         Zur Ausübung Ihrer Rechte wenden Sie sich bitte per E-Mail an:
-        <a href="mailto:dbuchber@gmx.at">dbuchber@gmx.at</a>
+        <a class="js-email" data-e="dbuchber" data-d="gmx.at" href="#"></a>
       </p>
       <p>
         Sie haben außerdem das Recht, sich bei der österreichischen Datenschutzbehörde
@@ -222,6 +223,14 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.js-email').forEach(el => {
+      const addr = el.dataset.e + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      el.textContent = addr;
+    });
+  </script>
 
 </body>
 </html>
