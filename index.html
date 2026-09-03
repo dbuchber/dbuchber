@@ -508,6 +508,23 @@
     }
     .project-link:hover { gap: 8px; color: var(--accent); }
 
+    .project-soon {
+      margin-top: auto;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--subtle);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-soon::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--subtle);
+    }
+
     /* ── BACHELOR THESIS ─────────────────────────── */
     .thesis-card {
       background: var(--white);
@@ -1048,6 +1065,201 @@
               <span class="ptag">paperless-ngx</span>
               <span class="ptag">Local LLM</span>
               <span class="ptag">Docker</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/serevo.jpg" alt="Sun loungers on a resort deck above a bay" loading="lazy">
+            <figcaption>Photo by <a href="https://unsplash.com/@lastmanpaul" target="_blank" rel="noopener">Pavel Gromov</a> / Unsplash</figcaption>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">fuxiq &middot; Ongoing</div>
+            <h3>SEREVO</h3>
+            <p>An operations platform for hospitality venues, built so that one product core serves several verticals. Beaches are the first vertical and the go-to-market wedge; pools, spas, resorts and hotels follow the same pattern. Runs multi-tenant in production with live demo venues.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">How can one platform serve beach clubs, pools, spas and resorts without turning into a separate product for each of them?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Multi-tenant data model in Prisma and Postgres, Supabase for auth and storage, TypeScript across guest web app and staff devices, Docker Compose behind Caddy, S3-compatible object storage.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Live multi-tenant deployment with demo venues and guest passes; a shared platform core with the beach vertical packaged on top, rather than one codebase per venue type.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">TypeScript</span>
+              <span class="ptag">Supabase</span>
+              <span class="ptag">Postgres</span>
+              <span class="ptag">Multi-tenant</span>
+              <span class="ptag">Docker</span>
+            </div>
+            <a class="project-link" href="https://beach.fuxiq.at" target="_blank" rel="noopener">Visit the site &rarr;</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/ai-hedging.jpg" alt="Screenshot of the AI cost calculator" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">fuxiq &middot; Ongoing</div>
+            <h3>AI Hedging</h3>
+            <p>A bilingual business-case calculator for the question of how to split an LLM workload across frontier APIs, cheaper models and local inference. The longer-term goal is a multi-tenant European AI router whose routing policy improves from each customer&rsquo;s own quality signals.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">Which share of an LLM workload actually needs the most expensive model &mdash; and what does moving the rest to cheaper or local inference cost and save?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Static site generator in Python, calculation core in JavaScript, single-source German and English content model, scenario modelling across provider pricing, GPU cost and substitution rate.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Deployed calculator covering local-vs-API total cost of ownership, GPU cost, provider lock-in and API outage cost, in both languages from one source.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">LLM Routing</span>
+              <span class="ptag">TCO Modelling</span>
+              <span class="ptag">Static Site</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/everyway.jpg" alt="Screenshot of the EveryWay concept site" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">Concept &middot; Ongoing</div>
+            <h3>EveryWay</h3>
+            <p>A routing concept for accessible navigation: routes that account for lift outages, closures and obstacles before somebody is standing in front of them. Six personal profiles &mdash; step-free, vision, hearing, stamina, low-stimulus and simple routes &mdash; can be combined per journey.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">What does a routing product need to know about a person before its shortest path is actually a usable path for them?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Profile-based route filtering, real-time disruption feed concept, accessibility-first interface design, zero-build static site with an interactive concept demo.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Published concept and working demo covering six accessibility profiles, written as the groundwork for a pilot project.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Accessibility</span>
+              <span class="ptag">Routing</span>
+              <span class="ptag">Concept Design</span>
+              <span class="ptag">Static Site</span>
+            </div>
+            <a class="project-link" href="https://everyway.fuxiq.at" target="_blank" rel="noopener">Visit the site &rarr;</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/intelligentliving.jpg" alt="Screenshot of the IntelligentLiving site" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">Concept &middot; Ongoing</div>
+            <h3>IntelligentLiving</h3>
+            <p>A bilingual product site for a private home-intelligence concept &mdash; a home that anticipates rather than waits for commands. The markup carries no copy at all: every string in both languages lives in a single translation module, so text and structure stay independently maintainable.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">Can a home automation product be described without the usual smart-home vocabulary, and stay privacy-first in its architecture rather than only in its marketing?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Zero-build static site, strict separation of copy and structure through one i18n module, scroll-driven narrative, German and English rendered from the same source.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Complete bilingual site and copydeck, including legal pages and a technical page, with every user-facing string in one file.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">i18n</span>
+              <span class="ptag">Static Site</span>
+              <span class="ptag">Privacy-first</span>
+              <span class="ptag">Copy Architecture</span>
+            </div>
+            <span class="project-soon">Coming soon &middot; intelligentliving.fuxiq.at</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/fuxiq.jpg" alt="Supermarket shelves seen from above" loading="lazy">
+            <figcaption>Photo by <a href="https://unsplash.com/@bernardhermant" target="_blank" rel="noopener">Bernard Hermant</a> / Unsplash</figcaption>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">fuxiq &middot; In development</div>
+            <h3>Shopping Intelligence Platform</h3>
+            <p>A consumer platform that turns grocery receipts into a household demand profile, then uses that profile to surface better offers, plan shopping trips and show where the money actually goes. Currently in the receipt extraction phase.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">Can a household&rsquo;s own receipts produce a demand profile precise enough to find offers that are genuinely better for that household?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Receipt extraction pipeline, asynchronous task processing with Celery, Postgres and Redis, S3-compatible object storage, phased roadmap with ticketed milestones.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Platform foundation and data model complete; the receipt extraction pipeline is the phase currently in progress.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">Celery</span>
+              <span class="ptag">Postgres</span>
+              <span class="ptag">Redis</span>
+              <span class="ptag">Document Extraction</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/oebb-mcp.jpg" alt="Concourse of a modern railway station" loading="lazy">
+            <figcaption>Photo by <a href="https://unsplash.com/@vtoesca" target="_blank" rel="noopener">Vincent Toesca</a> / Unsplash</figcaption>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">Personal &middot; Ongoing</div>
+            <h3>ÖBB MCP Server</h3>
+            <p>A Model Context Protocol server for Austrian Railways. It gives Claude and other MCP-capable assistants three tools &mdash; station search, journey planning and station boards &mdash; so a travel question can be answered against live timetable data instead of a training snapshot.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">What does an LLM assistant actually need in order to answer a real travel question, and how much of that fits into a small MCP tool surface?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Python MCP server, integration against the ÖBB timetable service, tool design for station search, journey planning and departure boards, handling of real-time connection data.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Working MCP server usable from any MCP-capable assistant for live Austrian rail queries.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">MCP</span>
+              <span class="ptag">Python</span>
+              <span class="ptag">LLM Tooling</span>
+              <span class="ptag">API Integration</span>
             </div>
           </div>
         </article>
