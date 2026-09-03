@@ -882,6 +882,9 @@
       transition: opacity 0.2s ease;
     }
     .pm-backdrop.open { opacity: 1; }
+    /* display:flex oben schlaegt das hidden-Attribut - ohne diese Regel
+       bleibt das unsichtbare Backdrop liegen und faengt alle Klicks ab. */
+    .pm-backdrop[hidden] { display: none; }
 
     .pm-panel {
       background: var(--white);
@@ -1710,7 +1713,7 @@
       const cards = [...document.querySelectorAll('.project-card')];
       if (!cards.length) return;
 
-      let backdrop, panel, lastFocus;
+      let backdrop, panel, lastFocus, hideTimer;
 
       function buildDialog() {
         backdrop = document.createElement('div');
@@ -1761,6 +1764,7 @@
         card.querySelectorAll('.project-meta, .project-tags, .project-link, .project-soon')
             .forEach(el => body.appendChild(el.cloneNode(true)));
 
+        clearTimeout(hideTimer);
         backdrop.hidden = false;
         document.body.style.overflow = 'hidden';
         requestAnimationFrame(() => backdrop.classList.add('open'));
@@ -1774,8 +1778,7 @@
         backdrop.classList.remove('open');
         document.removeEventListener('keydown', trap);
         document.body.style.overflow = '';
-        const done = () => { backdrop.hidden = true; };
-        setTimeout(done, 200);
+        hideTimer = setTimeout(() => { backdrop.hidden = true; }, 200);
         if (lastFocus && lastFocus.focus) lastFocus.focus();
       }
 
