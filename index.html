@@ -839,6 +839,19 @@
     .js .project-card .project-soon { display: none; }
     .js .project-body { min-height: 250px; }
 
+    /* Alle Karten gleich hoch: die Einleitung wird auf vier Zeilen
+       begrenzt, der vollstaendige Text steht im Dialog. */
+    .js .project-body > p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      overflow: hidden;
+      /* Vier Zeilen auch dann belegen, wenn der Text kuerzer ist -
+         sonst sind Karten mit dreizeiliger Einleitung niedriger. */
+      min-height: calc(0.875rem * 1.68 * 4);
+    }
+
     .project-more {
       align-self: flex-start;
       margin-top: auto;
@@ -930,10 +943,22 @@
       .project-card:hover .project-img img { transform: none; }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .pm-panel { padding: 24px 20px 26px; max-height: 90vh; }
       .pm-panel h3 { font-size: 1.2rem; }
       .js .project-body { min-height: 0; }
+    }
+
+    /* Zwischen 600 und 1000px brechen die laengeren Tag-Reihen auf zwei
+       Zeilen um. Dort zwei Zeilen fest reservieren, damit die Karten auch
+       in diesem Bereich gleich hoch bleiben. */
+    @media (min-width: 641px) and (max-width: 999px) {
+      .js .project-tags { min-height: 59px; align-content: flex-start; }
+    }
+
+    /* Bei schmalen Karten brechen die laengeren Titel zweizeilig um. */
+    @media (min-width: 641px) and (max-width: 760px) {
+      .js .project-body h3 { min-height: calc(1.1rem * 1.2 * 2); }
     }
 
     /* ── RESPONSIVE ──────────────────────────────── */
@@ -951,7 +976,7 @@
       .thesis-grid { grid-template-columns: 1fr; gap: 20px; }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .facts { grid-template-columns: 1fr; }
       .project-card { flex-direction: column; }
       .project-img { width: 100%; min-width: unset; height: 200px; }
