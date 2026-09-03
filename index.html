@@ -429,6 +429,15 @@
     }
     .project-img figcaption a { color: var(--subtle); text-decoration: underline; }
 
+    /* Karten ohne Foto: gezeichneter Platzhalter, gleiche Spaltenbreite */
+    .project-img.is-graphic {
+      background: linear-gradient(150deg, #eaeef4 0%, #dfe5ee 55%, #d5dce8 100%);
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+    .project-img.is-graphic svg { width: 100%; height: auto; max-height: 100%; }
+
     .project-body {
       padding: 26px 28px;
       display: flex;
@@ -985,7 +994,7 @@
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">LLM prompting, document parsing, workflow automation, on-premise model deployment, SAP API integration.</span>
+                <span class="project-meta-value">Invoices are exactly the documents an enterprise cannot send to a cloud model, so the question is whether a model running on the company&rsquo;s own hardware is good enough to do the work. Agents parse the document, derive the posting and write it into SAP through its own API, with the boundary between what the agent completes alone and what a person still has to confirm treated as a design decision rather than a setting.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
@@ -1018,7 +1027,7 @@
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Text classification, NLP-based feature engineering, relevance scoring, evaluation on private APA infrastructure.</span>
+                <span class="project-meta-value">An interview is a format, not a subject &mdash; it has to be recognised from structure and turn-taking rather than from what the text is about, which is why detection and ranking are two stages instead of one classifier. The archive cannot leave the newsroom, so every training and evaluation run happened on APA&rsquo;s own infrastructure rather than on rented compute.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
@@ -1033,6 +1042,46 @@
               <span class="ptag">Secure Infrastructure</span>
             </div>
             <a class="project-link" href="https://www.linkedin.com/posts/apa-it-informations-technologie-gmbh_apa-goes-wu-wirtschaftsuniversit%C3%A4t-wien-activity-7369263730599149568-ni6k?utm_source=share&utm_medium=member_desktop&rcm=ACoAACodIawBH2AHCbOqjindKSbYE7NEccV6iik" target="_blank" rel="noopener">View on LinkedIn &rarr;</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img is-graphic" aria-hidden="true">
+            <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="10" width="72" height="96" rx="5" fill="#ffffff" stroke="#b9c4d4" stroke-width="1.4"/>
+              <rect x="26" y="30" width="72" height="96" rx="5" fill="#ffffff" stroke="#8c9cb4" stroke-width="1.6"/>
+              <path d="M38 50h48M38 62h48M38 74h30" stroke="#c3cddc" stroke-width="2.4" stroke-linecap="round"/>
+              <rect x="36" y="86" width="30" height="9" rx="3" fill="#0071e3" fill-opacity="0.14" stroke="#0071e3" stroke-width="1.2"/>
+              <path d="M70 108v6h18" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="92" cy="114" r="5.5" fill="#0071e3" fill-opacity="0.16" stroke="#0071e3" stroke-width="1.6"/>
+              <path d="M89.6 114.2l1.9 1.9 3.1-3.6" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">Architecture &middot; 2026</div>
+            <h3>Document Intelligence Architecture</h3>
+            <p>An architecture concept for a document assistant used by a few thousand people on long, structured documents &mdash; contracts, legislation, briefs. Two problems drive the whole design: keeping cost and latency flat whether a workspace holds five documents or five hundred, and sharing a document set between people and between tools without inventing a second permission model for each.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">Where do the load-bearing decisions in a retrieval system actually sit &mdash; and which of them are architecture rather than model choice?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">The workspace, not the user, as the organising unit, so sharing between people and sharing between tools become the same concept. Permissions held in the same database as the vectors, so the scope filter is a SQL predicate taken from the session and never from user or model input. Vendor abstractions pitched at document structure rather than domain semantics &mdash; pitched any higher, the interface becomes one provider&rsquo;s feature set with the other faked by regex, which is the lock-in the abstraction exists to prevent. Provenance carried through ingestion so a citation resolves to a page and a clause, and a grounding check that marks unsupported claims rather than displaying them as grounded.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Seven abstraction layers, each earning its place through a second implementation that is actually run rather than anticipated &mdash; an abstraction with one implementation is a guess about the future. Every managed cloud service replaced locally by a container behind the same interface, so application code is identical in the proof of concept and in production. And a cost preview before large batch reviews, on the principle that a system which queues work has to say so before the user commits, not after.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">RAG</span>
+              <span class="ptag">pgvector</span>
+              <span class="ptag">Hybrid Search</span>
+              <span class="ptag">Architecture Design</span>
+              <span class="ptag">Azure</span>
+            </div>
           </div>
         </article>
 
@@ -1075,29 +1124,28 @@
             <figcaption>Photo by <a href="https://unsplash.com/@lastmanpaul" target="_blank" rel="noopener">Pavel Gromov</a> / Unsplash</figcaption>
           </figure>
           <div class="project-body">
-            <div class="project-badge">fuxiq &middot; Ongoing</div>
+            <div class="project-badge">fuxiq &middot; Live</div>
             <h3>SEREVO</h3>
-            <p>An operations platform for hospitality venues, built so that one product core serves several verticals. Beaches are the first vertical and the go-to-market wedge; pools, spas, resorts and hotels follow the same pattern. Runs multi-tenant in production with live demo venues.</p>
+            <p>Most venues run the floor on a radio and a laminated plan, and by half past nine the plan is already wrong: a spot assigned twice, a round of drinks delivered to the wrong row, two parasols that were in the inventory in May and are not on the floor in July. None of that is a booking problem &mdash; it happens in the hours after the booking, the part most hospitality software treats as somebody else&rsquo;s job. Booking software ends at check-in; SEREVO starts there.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">How can one platform serve beach clubs, pools, spas and resorts without turning into a separate product for each of them?</span>
+                <span class="project-meta-value">A beach club is not a restaurant with sand and a pool deck is not a dining room with chlorine &mdash; the floor plan changes with the season, staff are never standing at a terminal, guests will not install anything, and the stock walks away. What does an operations system look like when it is built for that, rather than for a fixed room with fixed tables?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Multi-tenant data model in Prisma and Postgres, Supabase for auth and storage, TypeScript across guest web app and staff devices, Docker Compose behind Caddy, S3-compatible object storage.</span>
+                <span class="project-meta-value">One product core serving several verticals instead of a codebase per venue type &mdash; beaches first as the go-to-market wedge, with pools, spas, resorts and hotels following the same pattern. Spots, orders, service requests, activities and inventory in a single live operational view; guests order by scanning once, with no app and no account. Existing PMS, POS, access control and messaging stay connected rather than being replaced, and multi-tenancy keeps each property&rsquo;s team, brand and data separate under one management view.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Live multi-tenant deployment with demo venues and guest passes; a shared platform core with the beach vertical packaged on top, rather than one codebase per venue type.</span>
+                <span class="project-meta-value">Running multi-tenant in production. A self-service demo provisions a complete venue &mdash; zones, spots, loungers and parasols, a menu, checked-in guests and orders already in progress &mdash; in about thirty seconds, so the product is evaluated by being used rather than in a sales call. Every service request arrives with its location and an owner; equipment stays visible when it moves, needs repair or leaves service.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">TypeScript</span>
-              <span class="ptag">Supabase</span>
-              <span class="ptag">Postgres</span>
               <span class="ptag">Multi-tenant</span>
-              <span class="ptag">Docker</span>
+              <span class="ptag">Hospitality Ops</span>
+              <span class="ptag">Guest Experience</span>
+              <span class="ptag">Self-service Onboarding</span>
             </div>
             <a class="project-link" href="https://beach.fuxiq.at" target="_blank" rel="noopener">Visit the site &rarr;</a>
           </div>
@@ -1105,33 +1153,34 @@
 
         <article class="project-card">
           <figure class="project-img">
-            <img src="/images/ai-hedging.jpg" alt="Screenshot of the AI cost calculator" loading="lazy">
+            <img src="/images/ai-hedging.jpg" alt="The AI Hedging cost calculator, showing routing inputs and the resulting annual saving" loading="lazy">
           </figure>
           <div class="project-body">
             <div class="project-badge">fuxiq &middot; Ongoing</div>
             <h3>AI Hedging</h3>
-            <p>A bilingual business-case calculator for the question of how to split an LLM workload across frontier APIs, cheaper models and local inference. The longer-term goal is a multi-tenant European AI router whose routing policy improves from each customer&rsquo;s own quality signals.</p>
+            <p>Most requests do not need the most expensive model. AI Hedging asks which share of a company&rsquo;s LLM workload genuinely requires the frontier model, and what a controlled second path across cheaper, hosted and local inference actually costs and saves. The longer-term product is a European, multi-tenant AI router that picks the cheapest model still meeting each customer&rsquo;s own quality bar, latency target and data policy.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">Which share of an LLM workload actually needs the most expensive model &mdash; and what does moving the rest to cheaper or local inference cost and save?</span>
+                <span class="project-meta-value">Which share of an LLM workload actually needs the most expensive model &mdash; and what does a second path cost once verifier runs, escalations and additional failures are netted against the saving?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Static site generator in Python, calculation core in JavaScript, single-source German and English content model, scenario modelling across provider pricing, GPU cost and substitution rate.</span>
+                <span class="project-meta-value">The business case modelled end to end: avoided API cost netted against verifier and escalation runs, additional failures measured against the frontier reference, and &mdash; where selected &mdash; local total cost of ownership and reduced outage risk. The workload is split into easy, medium and hard classes as a transparent starting policy, explicitly not the target product&rsquo;s decision logic. Sensitivity across price drift rather than a single number, with placeholder assumptions kept visibly separate from customer-measured values.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Deployed calculator covering local-vs-API total cost of ownership, GPU cost, provider lock-in and API outage cost, in both languages from one source.</span>
+                <span class="project-meta-value">A business case whose actual result is the sensitivity, not a headline saving: at which price drift, task mix and quality bar a second path stops paying. A hosted second path cuts cost and provider concentration without CAPEX; own hardware is a separate scenario that only pays at sufficient load or with defensible outage value. The roadmap runs from the routing simulator through offline evaluation with design partners and a BYOK gateway to adaptive, tenant-isolated routing policies.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">Python</span>
-              <span class="ptag">JavaScript</span>
               <span class="ptag">LLM Routing</span>
               <span class="ptag">TCO Modelling</span>
-              <span class="ptag">Static Site</span>
+              <span class="ptag">Multi-tenant</span>
+              <span class="ptag">EU Data Residency</span>
+              <span class="ptag">Cost Optimisation</span>
             </div>
+            <span class="project-soon">Coming soon &middot; ai.fuxiq.at</span>
           </div>
         </article>
 
@@ -1140,28 +1189,29 @@
             <img src="/images/everyway.jpg" alt="Screenshot of the EveryWay concept site" loading="lazy">
           </figure>
           <div class="project-body">
-            <div class="project-badge">Concept &middot; Ongoing</div>
+            <div class="project-badge">Concept &middot; Concept phase</div>
             <h3>EveryWay</h3>
-            <p>A routing concept for accessible navigation: routes that account for lift outages, closures and obstacles before somebody is standing in front of them. Six personal profiles &mdash; step-free, vision, hearing, stamina, low-stimulus and simple routes &mdash; can be combined per journey.</p>
+            <p>A route can work on the map and still be impassable in reality. A single broken lift is not a minor inconvenience &mdash; if it is the only step-free access to a station, the route does not get longer, it disappears. EveryWay plans journeys that already know the current state of the infrastructure and reroute around it before somebody is standing in front of the problem.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">What does a routing product need to know about a person before its shortest path is actually a usable path for them?</span>
+                <span class="project-meta-value">What does a routing system need to know &mdash; about the network&rsquo;s current state and about the person travelling &mdash; before its shortest path is actually a usable path?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Profile-based route filtering, real-time disruption feed concept, accessibility-first interface design, zero-build static site with an interactive concept demo.</span>
+                <span class="project-meta-value">Six combinable need profiles &mdash; step-free, vision, hearing, stamina, low-stimulus and simple routes &mdash; instead of one accessibility filter; static infrastructure from OpenStreetMap tagging joined with operator real-time disruption feeds and community reports that carry confirmation and expiry; participatory development with self-advocacy organisations, and EN 301 549 from the first line rather than at acceptance testing.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Published concept and working demo covering six accessibility profiles, written as the groundwork for a pilot project.</span>
+                <span class="project-meta-value">A documented concept: the data already exists and is openly licensed &mdash; the work is in connecting it. Gap analysis against Wheelmap, operator lift-status services and academic OSM routing prototypes shows nobody joins static infrastructure, multi-operator real-time status and community knowledge into one continuous door-to-destination route. Positioned against existing obligations (UN CRPD Art. 9, National Action Plan on Disability 2022&ndash;2030, BaFG), with the open points &mdash; advisory board, first user research &mdash; stated rather than hidden. One building block is already specified in detail: beacon-guided wayfinding for the places where GPS gives up, with the accessibility graph held offline on the device, reports tied to a confirmed beacon so that they carry weight, and the WU Vienna campus as the first pilot area &mdash; small enough to survey, public, and mixing indoor and outdoor space.</span>
               </div>
             </div>
             <div class="project-tags">
               <span class="ptag">Accessibility</span>
               <span class="ptag">Routing</span>
-              <span class="ptag">Concept Design</span>
-              <span class="ptag">Static Site</span>
+              <span class="ptag">Real-time Data</span>
+              <span class="ptag">OpenStreetMap</span>
+              <span class="ptag">Participatory Design</span>
             </div>
             <a class="project-link" href="https://everyway.fuxiq.at" target="_blank" rel="noopener">Visit the site &rarr;</a>
           </div>
@@ -1169,31 +1219,31 @@
 
         <article class="project-card">
           <figure class="project-img">
-            <img src="/images/intelligentliving.jpg" alt="Screenshot of the IntelligentLiving site" loading="lazy">
+            <img src="/images/intelligentliving.jpg" alt="A dark stone facade with the line &quot;Your home can do more than wait for commands&quot;" loading="lazy">
           </figure>
           <div class="project-body">
             <div class="project-badge">Concept &middot; Ongoing</div>
             <h3>IntelligentLiving</h3>
-            <p>A bilingual product site for a private home-intelligence concept &mdash; a home that anticipates rather than waits for commands. The markup carries no copy at all: every string in both languages lives in a single translation module, so text and structure stay independently maintainable.</p>
+            <p>A home that understands situations instead of waiting for commands, and takes the small everyday decisions off your hands. The goal is not more smart home &mdash; it is less for you to think about: no setting things in the morning, no checking whether everything is switched off, no app for every part of the house, no rules for you to maintain.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">Can a home automation product be described without the usual smart-home vocabulary, and stay privacy-first in its architecture rather than only in its marketing?</span>
+                <span class="project-meta-value">Can a home be intelligent without becoming the next interface that demands your attention &mdash; and stay privacy-first in its architecture rather than only in its marketing?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Zero-build static site, strict separation of copy and structure through one i18n module, scroll-driven narrative, German and English rendered from the same source.</span>
+                <span class="project-meta-value">An intelligence layer above existing home automation, separated from it by a deliberate boundary: the layer forms an intent, the house decides locally what follows from it. A language model proposes; it does not act. Where processing happens is decided per class of data rather than once for the whole product, and the system degrades in stages so that a lost connection costs intelligence, not function. Automation is split into doing, coordinating and anticipating, with cost, reach and safety deciding what may happen without confirmation.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Complete bilingual site and copydeck, including legal pages and a technical page, with every user-facing string in one file.</span>
+                <span class="project-meta-value">A worked concept covering the context model, the local/remote boundary, and a two-stage concierge &mdash; AI for what is digital and clearly ordered, a person where a person is the better answer. Including a room device deliberately built without display, logo or permanent status light, because the technology is meant to disappear rather than announce itself.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">i18n</span>
-              <span class="ptag">Static Site</span>
+              <span class="ptag">Home Intelligence</span>
               <span class="ptag">Privacy-first</span>
-              <span class="ptag">Copy Architecture</span>
+              <span class="ptag">Local Inference</span>
+              <span class="ptag">Concept Design</span>
             </div>
             <span class="project-soon">Coming soon &middot; intelligentliving.fuxiq.at</span>
           </div>
@@ -1207,27 +1257,27 @@
           <div class="project-body">
             <div class="project-badge">fuxiq &middot; In development</div>
             <h3>Shopping Intelligence Platform</h3>
-            <p>A consumer platform that turns grocery receipts into a household demand profile, then uses that profile to surface better offers, plan shopping trips and show where the money actually goes. Currently in the receipt extraction phase.</p>
+            <p>A consumer platform that turns grocery receipts into a household demand profile, then uses that profile to surface offers that are genuinely better for that household, plan shopping trips and show where the money actually goes. The receipt is the hard part: everything downstream depends on the line items being right.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">Can a household&rsquo;s own receipts produce a demand profile precise enough to find offers that are genuinely better for that household?</span>
+                <span class="project-meta-value">Can a household&rsquo;s own receipts produce a demand profile precise enough to find offers that are genuinely better for that household &mdash; and how do you know when an extracted receipt is trustworthy enough to build on?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Receipt extraction pipeline, asynchronous task processing with Celery, Postgres and Redis, S3-compatible object storage, phased roadmap with ticketed milestones.</span>
+                <span class="project-meta-value">Austrian receipts carry a fiscal QR code with a cryptographically signed total, which the pipeline treats as a ground-truth oracle instead of trusting the model&rsquo;s own output. Perspective-corrected cropping and OCR feed a structured extraction; where the extracted total disagrees with the signed one by more than a cent, a second model runs with the signed total injected as a hint. A supervision interface exposes every intermediate stage &mdash; crop, decoded code, OCR text, extracted data &mdash; so a failure can be attributed to a step rather than to the pipeline as a whole.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Platform foundation and data model complete; the receipt extraction pipeline is the phase currently in progress.</span>
+                <span class="project-meta-value">An extraction pipeline with a built-in correctness signal: for each receipt it can state whether the result reconciles against a signed total, rather than reporting a confidence score. Receipt extraction is the phase in progress; the demand profile and offer matching build on it.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">Python</span>
-              <span class="ptag">Celery</span>
-              <span class="ptag">Postgres</span>
-              <span class="ptag">Redis</span>
               <span class="ptag">Document Extraction</span>
+              <span class="ptag">LLM Validation</span>
+              <span class="ptag">OCR</span>
+              <span class="ptag">Structured Output</span>
+              <span class="ptag">Consumer Data</span>
             </div>
           </div>
         </article>
@@ -1276,7 +1326,7 @@
       <div class="section-header fade-up">
         <div class="eyebrow">Research</div>
         <h2>Bachelor Thesis.</h2>
-        <p class="section-sub">Graph-grounded question answering &mdash; at WU Vienna.</p>
+        <p class="section-sub">Grounding medical answers in a human-curated knowledge graph &mdash; at WU Vienna.</p>
       </div>
 
       <div class="thesis-card fade-up">
@@ -1292,25 +1342,27 @@
         </div>
 
         <p class="thesis-desc">
-          LLMs can sound confident and be completely wrong. This thesis asks whether grounding answers in a large-scale, human-curated knowledge graph &mdash; traversed in parallel by multiple agents &mdash; can change that. Evaluated in a domain where being wrong is not just a low score.
+          LLMs can sound confident and be completely wrong. This thesis grounds medical question answering in a graph built from human-curated sources rather than extracted by a model &mdash; because a model-built graph puts hallucination into the substrate itself, before a question is ever asked. Sub-agents traverse the complete Wikidata truthy graph in parallel from different entry points, and a main agent selects the evidence the answer is built on. Accuracy and faithfulness are scored separately, so a system that is right for the wrong reasons does not count as a success.
         </p>
 
         <div class="thesis-grid">
           <div class="thesis-col">
             <h4>Research Focus</h4>
             <ul>
-              <li>Hybrid graph traversal with parallel sub-agents</li>
-              <li>Hallucination reduction &amp; answer faithfulness</li>
-              <li>Human-curated vs. LLM-extracted knowledge graphs</li>
+              <li>Hybrid seeded traversal with parallel sub-agents</li>
+              <li>Accuracy and faithfulness scored separately</li>
+              <li>Human-curated vs. LLM-extracted graph substrates</li>
+              <li>Compared against one-shot prompting, two-step RAG and agentic RAG</li>
             </ul>
           </div>
           <div class="thesis-col">
             <h4>Technologies &amp; Methods</h4>
             <ul>
-              <li>Neo4j &middot; Wikidata &middot; SPARQL</li>
-              <li>LangChain &middot; LlamaIndex</li>
+              <li>Wikidata truthy &middot; Fuseki &middot; SPARQL</li>
+              <li>Neo4j &middot; Qdrant &middot; Qwen3 embeddings</li>
+              <li>LangChain &middot; LlamaIndex &middot; LiteLLM</li>
               <li>Ollama &middot; vllm &middot; open-weight LLMs</li>
-              <li>Python &middot; MLflow</li>
+              <li>Python &middot; MLflow &middot; Langfuse</li>
             </ul>
           </div>
         </div>
