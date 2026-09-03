@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel Buchberger | Applied AI · Knowledge Graphs · Enterprise Systems</title>
+  <script>document.documentElement.classList.add('js');</script>
   <meta name="description" content="Daniel Buchberger — Business Informatics student at WU Vienna documenting work and research interests around applied AI, knowledge graphs, fullstack development, networking and enterprise systems.">
   <meta name="author" content="Daniel Buchberger">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -408,11 +409,18 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      /* Bezugsrahmen fuer das absolut gesetzte Bild. */
+      position: relative;
     }
+    /* Das Bild steht ausserhalb des Flusses: sonst bringt ein Hochformat
+       seine Eigenhoehe ein und bestimmt damit die Hoehe der ganzen Karte
+       (ein 702x1200-Screenshot ergaebe bei 220px Breite 376px Karte).
+       So gibt allein der Text die Hoehe vor, das Bild fuellt sie aus. */
     .project-img img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      flex: 1;
-      min-height: 0;
+      height: 100%;
       object-fit: cover;
       display: block;
       transition: transform 0.5s ease;
@@ -420,12 +428,15 @@
     .project-card:hover .project-img img { transform: scale(1.05); }
 
     .project-img figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
       font-size: 0.58rem;
-      color: var(--subtle);
+      color: var(--muted);
       padding: 4px 8px;
       text-align: center;
-      background: var(--gray);
-      flex-shrink: 0;
+      background: rgba(255,255,255,0.88);
     }
     .project-img figcaption a { color: var(--subtle); text-decoration: underline; }
 
@@ -814,6 +825,117 @@
     .stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.21s; }
     .stagger.visible > *:nth-child(n+5) { opacity:1; transform:none; transition-delay:0.28s; }
 
+    /* ── Kompakte Karten + Detaildialog (nur mit JavaScript) ──────────
+       Ohne JS bleibt jede Karte vollstaendig lesbar; die Regeln unten
+       greifen erst, wenn das Inline-Skript im Kopf .js gesetzt hat. */
+
+    /* Screenshots von oben zeigen: die Ueberschrift ist der Bildinhalt,
+       ein mittiger Beschnitt schneidet sie auf beiden Seiten an. */
+    .project-img.is-shot img { object-position: top center; }
+
+    .js .project-card { cursor: pointer; }
+    .js .project-card .project-meta,
+    .js .project-card .project-link,
+    .js .project-card .project-soon { display: none; }
+    .js .project-body { min-height: 250px; }
+
+    .project-more {
+      align-self: flex-start;
+      margin-top: auto;
+      font: inherit;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: none;
+      border: 0;
+      padding: 4px 0;
+      cursor: pointer;
+    }
+    .project-more:hover { color: var(--accent-h); }
+    .project-more .chev { transition: transform 0.2s; display: inline-block; }
+    .project-card:hover .project-more .chev { transform: translateX(3px); }
+
+    /* ── Dialog ── */
+    .pm-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0,0,0,0.45);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .pm-backdrop.open { opacity: 1; }
+
+    .pm-panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      width: min(720px, 100%);
+      max-height: min(84vh, 900px);
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+      padding: 32px 34px 34px;
+      transform: translateY(10px) scale(0.99);
+      transition: transform 0.2s ease;
+    }
+    .pm-backdrop.open .pm-panel { transform: none; }
+
+    .pm-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 4px;
+    }
+    .pm-close {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .pm-close:hover { background: var(--gray); color: var(--text); }
+
+    .pm-panel h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .pm-panel .pm-lead {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .pm-panel .project-meta { display: flex; }
+    .pm-panel .project-meta-value { font-size: 0.875rem; line-height: 1.65; }
+    .pm-panel .project-tags { margin-top: 20px; }
+    .pm-panel .project-link,
+    .pm-panel .project-soon { margin-top: 20px; display: inline-flex; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pm-backdrop, .pm-panel { transition: none; }
+      .project-card:hover { transform: none; }
+      .project-card:hover .project-img img { transform: none; }
+    }
+
+    @media (max-width: 620px) {
+      .pm-panel { padding: 24px 20px 26px; max-height: 90vh; }
+      .pm-panel h3 { font-size: 1.2rem; }
+      .js .project-body { min-height: 0; }
+    }
+
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 860px) {
       .facts { grid-template-columns: repeat(2, 1fr); }
@@ -1152,7 +1274,7 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img">
+          <figure class="project-img is-shot">
             <img src="/images/ai-hedging.jpg" alt="The AI Hedging cost calculator, showing routing inputs and the resulting annual saving" loading="lazy">
           </figure>
           <div class="project-body">
@@ -1185,7 +1307,7 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img">
+          <figure class="project-img is-shot">
             <img src="/images/everyway.jpg" alt="The EveryWay concept demo, with six route profiles and a step-free alternative around a broken lift" loading="lazy">
           </figure>
           <div class="project-body">
@@ -1218,7 +1340,7 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img">
+          <figure class="project-img is-shot">
             <img src="/images/intelligentliving.jpg" alt="A dark stone facade with the line &quot;Your home can do more than wait for commands&quot;" loading="lazy">
           </figure>
           <div class="project-body">
@@ -1554,6 +1676,106 @@
       el.href = 'mailto:' + addr;
       el.textContent = addr;
     });
+
+    /* ── Projektkarten: kompakt anzeigen, Details im Dialog ──────────────
+       Die Detailzeilen bleiben im Markup und werden nur ausgeblendet, damit
+       sie ohne JavaScript und fuer Suchmaschinen erhalten bleiben. Beim
+       Oeffnen wandert eine Kopie in den Dialog. */
+    (function () {
+      const cards = [...document.querySelectorAll('.project-card')];
+      if (!cards.length) return;
+
+      let backdrop, panel, lastFocus;
+
+      function buildDialog() {
+        backdrop = document.createElement('div');
+        backdrop.className = 'pm-backdrop';
+        backdrop.hidden = true;
+        backdrop.innerHTML =
+          '<div class="pm-panel" role="dialog" aria-modal="true" aria-labelledby="pm-title">' +
+            '<div class="pm-head">' +
+              '<div class="project-badge" data-pm-badge></div>' +
+              '<button type="button" class="pm-close" aria-label="Close">&#215;</button>' +
+            '</div>' +
+            '<h3 id="pm-title" data-pm-title></h3>' +
+            '<div class="pm-lead" data-pm-lead></div>' +
+            '<div data-pm-body></div>' +
+          '</div>';
+        document.body.appendChild(backdrop);
+        panel = backdrop.querySelector('.pm-panel');
+
+        backdrop.querySelector('.pm-close').addEventListener('click', close);
+        backdrop.addEventListener('mousedown', (e) => { if (e.target === backdrop) close(); });
+      }
+
+      /* Tab bleibt im Dialog, solange er offen ist. */
+      function trap(e) {
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key !== 'Tab') return;
+        const focusable = panel.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+
+      function open(card) {
+        if (!backdrop) buildDialog();
+        lastFocus = document.activeElement;
+
+        const badge = card.querySelector('.project-badge');
+        const title = card.querySelector('h3');
+        const lead  = card.querySelector('.project-body > p');
+
+        panel.querySelector('[data-pm-badge]').textContent = badge ? badge.textContent : '';
+        panel.querySelector('[data-pm-title]').textContent = title ? title.textContent : '';
+        panel.querySelector('[data-pm-lead]').textContent  = lead ? lead.textContent : '';
+
+        const body = panel.querySelector('[data-pm-body]');
+        body.textContent = '';
+        card.querySelectorAll('.project-meta, .project-tags, .project-link, .project-soon')
+            .forEach(el => body.appendChild(el.cloneNode(true)));
+
+        backdrop.hidden = false;
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => backdrop.classList.add('open'));
+        panel.scrollTop = 0;
+        panel.querySelector('.pm-close').focus();
+        document.addEventListener('keydown', trap);
+      }
+
+      function close() {
+        if (!backdrop || backdrop.hidden) return;
+        backdrop.classList.remove('open');
+        document.removeEventListener('keydown', trap);
+        document.body.style.overflow = '';
+        const done = () => { backdrop.hidden = true; };
+        setTimeout(done, 200);
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      cards.forEach(card => {
+        const body = card.querySelector('.project-body');
+        if (!body) return;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'project-more';
+        const name = card.querySelector('h3');
+        btn.innerHTML = 'Details <span class="chev" aria-hidden="true">&rarr;</span>';
+        if (name) btn.setAttribute('aria-label', 'Details: ' + name.textContent);
+        body.appendChild(btn);
+        btn.addEventListener('click', (e) => { e.stopPropagation(); open(card); });
+
+        /* Klick irgendwo auf der Karte oeffnet ebenfalls - ausser auf echten
+           Links, die weiterhin ihr eigenes Ziel ansteuern. */
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          if (window.getSelection && String(window.getSelection())) return;
+          open(card);
+        });
+      });
+    })();
   </script>
 
 </body>
