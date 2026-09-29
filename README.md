@@ -17,7 +17,7 @@
 
 > **"Geht ned? Gibts ned!"** — Austrian for: there’s always a solution.
 
-> Completed my bachelor thesis on **multi-agent Knowledge Graph traversal** against LLM hallucination (grade: Sehr gut).
+> Completed my bachelor thesis on **multi-agent Knowledge Graph traversal** against LLM hallucination (grade: Excellent — highest on the Austrian scale).
 
 ## Quick Links
 - 💼 LinkedIn: https://www.linkedin.com/in/daniel-buchberger-490758178/
