@@ -1136,7 +1136,7 @@
             <figcaption>Photo by <a href="https://unsplash.com/@ilyapavlov" target="_blank" rel="noopener">Ilya Pavlov</a> / Unsplash</figcaption>
           </figure>
           <div class="project-body">
-            <div class="project-badge">INFORMATICS &middot; 2025</div>
+            <div class="project-badge">INFORMATICS &middot; Prototype</div>
             <h3>AI Agent Invoice Automation</h3>
             <p>Prototype for an AI agent-based automated invoice processing pipeline with direct SAP integration. Demonstrated at the 20th INFORMATICS SAPshots event alongside manufacturing and healthcare use cases.</p>
             <div class="project-meta">
@@ -1169,7 +1169,7 @@
             <figcaption>Photo by <a href="https://unsplash.com/@codzilla_swiss" target="_blank" rel="noopener">AbsolutVision</a> / Unsplash</figcaption>
           </figure>
           <div class="project-body">
-            <div class="project-badge">APA &times; WU Data Science Lab &middot; 2025</div>
+            <div class="project-badge">APA &times; WU Data Science Lab &middot; Completed</div>
             <h3>Interview Detection &amp; Search Optimisation</h3>
             <p>Developed with three fellow students &mdash; a two-stage AI system that identifies interviews within the APA news database and optimises search relevance. Trained exclusively on secure, private infrastructure.</p>
             <div class="project-meta">
@@ -1198,52 +1198,12 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img is-graphic" aria-hidden="true">
-            <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="72" height="96" rx="5" fill="#ffffff" stroke="#b9c4d4" stroke-width="1.4"/>
-              <rect x="26" y="30" width="72" height="96" rx="5" fill="#ffffff" stroke="#8c9cb4" stroke-width="1.6"/>
-              <path d="M38 50h48M38 62h48M38 74h30" stroke="#c3cddc" stroke-width="2.4" stroke-linecap="round"/>
-              <rect x="36" y="86" width="30" height="9" rx="3" fill="#0071e3" fill-opacity="0.14" stroke="#0071e3" stroke-width="1.2"/>
-              <path d="M70 108v6h18" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round"/>
-              <circle cx="92" cy="114" r="5.5" fill="#0071e3" fill-opacity="0.16" stroke="#0071e3" stroke-width="1.6"/>
-              <path d="M89.6 114.2l1.9 1.9 3.1-3.6" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </figure>
-          <div class="project-body">
-            <div class="project-badge">Architecture &middot; 2026</div>
-            <h3>Document Intelligence Architecture</h3>
-            <p>An architecture concept for a document assistant used by a few thousand people on long, structured documents &mdash; contracts, legislation, briefs. Two problems drive the whole design: keeping cost and latency flat whether a workspace holds five documents or five hundred, and sharing a document set between people and between tools without inventing a second permission model for each.</p>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">Where do the load-bearing decisions in a retrieval system actually sit &mdash; and which of them are architecture rather than model choice?</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">The workspace, not the user, as the organising unit, so sharing between people and sharing between tools become the same concept. Permissions held in the same database as the vectors, so the scope filter is a SQL predicate taken from the session and never from user or model input. Vendor abstractions pitched at document structure rather than domain semantics &mdash; pitched any higher, the interface becomes one provider&rsquo;s feature set with the other faked by regex, which is the lock-in the abstraction exists to prevent. Provenance carried through ingestion so a citation resolves to a page and a clause, and a grounding check that marks unsupported claims rather than displaying them as grounded.</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Seven abstraction layers, each earning its place through a second implementation that is actually run rather than anticipated &mdash; an abstraction with one implementation is a guess about the future. Every managed cloud service replaced locally by a container behind the same interface, so application code is identical in the proof of concept and in production. And a cost preview before large batch reviews, on the principle that a system which queues work has to say so before the user commits, not after.</span>
-              </div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">RAG</span>
-              <span class="ptag">pgvector</span>
-              <span class="ptag">Hybrid Search</span>
-              <span class="ptag">Architecture Design</span>
-              <span class="ptag">Azure</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
           <figure class="project-img">
             <img src="/images/paperless-office.jpg" alt="Minimal desk setup" loading="lazy">
             <figcaption>Photo by <a href="https://unsplash.com/@dhony24" target="_blank" rel="noopener">Dhony Koswara</a> / Unsplash</figcaption>
           </figure>
           <div class="project-body">
-            <div class="project-badge">Family Business &middot; Ongoing</div>
+            <div class="project-badge">Family Business &middot; In use</div>
             <h3>Paperless Digital Office</h3>
             <p>Built a fully paperless office using paperless-ngx, with automated invoice pre-accounting via local LLMs running on Ollama. Document classification and data extraction handled through n8n workflows.</p>
             <div class="project-meta">
@@ -1272,11 +1232,44 @@
 
         <article class="project-card">
           <figure class="project-img">
+            <img src="/images/fuxiq.jpg" alt="Crumpled store receipt on a white surface" loading="lazy">
+            <figcaption>Photo by <a href="https://unsplash.com/@ml1989" target="_blank" rel="noopener">Michael Walter</a> / Unsplash</figcaption>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">fuxiq &middot; Beta</div>
+            <h3>Shopping Intelligence Platform</h3>
+            <p>A consumer platform that turns grocery receipts into a household demand profile, then uses that profile to surface offers that are genuinely better for that household, plan shopping trips and show where the money actually goes. The receipt is the hard part: everything downstream depends on the line items being right.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">Can a household&rsquo;s own receipts produce a demand profile precise enough to find offers that are genuinely better for that household &mdash; and how do you know when an extracted receipt is trustworthy enough to build on?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Austrian receipts carry a fiscal QR code with a cryptographically signed total, which the pipeline treats as a ground-truth oracle instead of trusting the model&rsquo;s own output. Perspective-corrected cropping and OCR feed a structured extraction; where the extracted total disagrees with the signed one by more than a cent, a second model runs with the signed total injected as a hint. A supervision interface exposes every intermediate stage &mdash; crop, decoded code, OCR text, extracted data &mdash; so a failure can be attributed to a step rather than to the pipeline as a whole.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">An extraction pipeline with a built-in correctness signal: for each receipt it can state whether the result reconciles against a signed total, rather than reporting a confidence score. Receipt extraction is the phase in progress; the demand profile and offer matching build on it.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Document Extraction</span>
+              <span class="ptag">LLM Validation</span>
+              <span class="ptag">OCR</span>
+              <span class="ptag">Structured Output</span>
+              <span class="ptag">Consumer Data</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
             <img src="/images/serevo.jpg" alt="Sun loungers on a resort deck above a bay" loading="lazy">
             <figcaption>Photo by <a href="https://unsplash.com/@lastmanpaul" target="_blank" rel="noopener">Pavel Gromov</a> / Unsplash</figcaption>
           </figure>
           <div class="project-body">
-            <div class="project-badge">fuxiq &middot; Live</div>
+            <div class="project-badge">fuxiq &middot; Prototype</div>
             <h3>SEREVO</h3>
             <p>Most venues run the floor on a radio and a laminated plan, and by half past nine the plan is already wrong: a spot assigned twice, a round of drinks delivered to the wrong row, two parasols that were in the inventory in May and are not on the floor in July. None of that is a booking problem &mdash; it happens in the hours after the booking, the part most hospitality software treats as somebody else&rsquo;s job. Booking software ends at check-in; SEREVO starts there.</p>
             <div class="project-meta">
@@ -1308,7 +1301,7 @@
             <img src="/images/ai-hedging.jpg" alt="The AI Hedging cost calculator, showing routing inputs and the resulting annual saving" loading="lazy">
           </figure>
           <div class="project-body">
-            <div class="project-badge">fuxiq &middot; Ongoing</div>
+            <div class="project-badge">fuxiq &middot; Concept</div>
             <h3>AI Hedging</h3>
             <p>Most requests do not need the most expensive model. AI Hedging asks which share of a company&rsquo;s LLM workload genuinely requires the frontier model, and what a controlled second path across cheaper, hosted and local inference actually costs and saves. The longer-term product is a European, multi-tenant AI router that picks the cheapest model still meeting each customer&rsquo;s own quality bar, latency target and data policy.</p>
             <div class="project-meta">
@@ -1337,35 +1330,74 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img is-shot">
-            <img src="/images/everyway.jpg" alt="The EveryWay concept demo, with six route profiles and a step-free alternative around a broken lift" loading="lazy">
+          <figure class="project-img is-graphic" aria-hidden="true">
+            <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="10" width="72" height="96" rx="5" fill="#ffffff" stroke="#b9c4d4" stroke-width="1.4"/>
+              <rect x="26" y="30" width="72" height="96" rx="5" fill="#ffffff" stroke="#8c9cb4" stroke-width="1.6"/>
+              <path d="M38 50h48M38 62h48M38 74h30" stroke="#c3cddc" stroke-width="2.4" stroke-linecap="round"/>
+              <rect x="36" y="86" width="30" height="9" rx="3" fill="#0071e3" fill-opacity="0.14" stroke="#0071e3" stroke-width="1.2"/>
+              <path d="M70 108v6h18" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="92" cy="114" r="5.5" fill="#0071e3" fill-opacity="0.16" stroke="#0071e3" stroke-width="1.6"/>
+              <path d="M89.6 114.2l1.9 1.9 3.1-3.6" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </figure>
           <div class="project-body">
-            <div class="project-badge">Concept &middot; Concept phase</div>
-            <h3>EveryWay</h3>
-            <p>A route can work on the map and still be impassable in reality. A single broken lift is not a minor inconvenience &mdash; if it is the only step-free access to a station, the route does not get longer, it disappears. EveryWay plans journeys that already know the current state of the infrastructure and reroute around it before somebody is standing in front of the problem.</p>
+            <div class="project-badge">Personal &middot; Prototype</div>
+            <h3>Document Intelligence Architecture</h3>
+            <p>An architecture concept for a document assistant used by a few thousand people on long, structured documents &mdash; contracts, legislation, briefs. Two problems drive the whole design: keeping cost and latency flat whether a workspace holds five documents or five hundred, and sharing a document set between people and between tools without inventing a second permission model for each.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">What does a routing system need to know &mdash; about the network&rsquo;s current state and about the person travelling &mdash; before its shortest path is actually a usable path?</span>
+                <span class="project-meta-value">Where do the load-bearing decisions in a retrieval system actually sit &mdash; and which of them are architecture rather than model choice?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Six combinable need profiles &mdash; step-free, vision, hearing, stamina, low-stimulus and simple routes &mdash; instead of one accessibility filter; static infrastructure from OpenStreetMap tagging joined with operator real-time disruption feeds and community reports that carry confirmation and expiry; participatory development with self-advocacy organisations, and EN 301 549 from the first line rather than at acceptance testing.</span>
+                <span class="project-meta-value">The workspace, not the user, as the organising unit, so sharing between people and sharing between tools become the same concept. Permissions held in the same database as the vectors, so the scope filter is a SQL predicate taken from the session and never from user or model input. Vendor abstractions pitched at document structure rather than domain semantics &mdash; pitched any higher, the interface becomes one provider&rsquo;s feature set with the other faked by regex, which is the lock-in the abstraction exists to prevent. Provenance carried through ingestion so a citation resolves to a page and a clause, and a grounding check that marks unsupported claims rather than displaying them as grounded.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">A documented concept: the data already exists and is openly licensed &mdash; the work is in connecting it. Gap analysis against Wheelmap, operator lift-status services and academic OSM routing prototypes shows nobody joins static infrastructure, multi-operator real-time status and community knowledge into one continuous door-to-destination route. Positioned against existing obligations (UN CRPD Art. 9, National Action Plan on Disability 2022&ndash;2030, BaFG), with the open points &mdash; advisory board, first user research &mdash; stated rather than hidden. One building block is already specified in detail: beacon-guided wayfinding for the places where GPS gives up, with the accessibility graph held offline on the device, reports tied to a confirmed beacon so that they carry weight, and the WU Vienna campus as the first pilot area &mdash; small enough to survey, public, and mixing indoor and outdoor space.</span>
+                <span class="project-meta-value">Seven abstraction layers, each earning its place through a second implementation that is actually run rather than anticipated &mdash; an abstraction with one implementation is a guess about the future. Every managed cloud service replaced locally by a container behind the same interface, so application code is identical in the proof of concept and in production. And a cost preview before large batch reviews, on the principle that a system which queues work has to say so before the user commits, not after.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">Accessibility</span>
-              <span class="ptag">Routing</span>
-              <span class="ptag">Real-time Data</span>
-              <span class="ptag">OpenStreetMap</span>
-              <span class="ptag">Participatory Design</span>
+              <span class="ptag">RAG</span>
+              <span class="ptag">pgvector</span>
+              <span class="ptag">Hybrid Search</span>
+              <span class="ptag">Architecture Design</span>
+              <span class="ptag">Azure</span>
             </div>
-            <a class="project-link" href="https://everyway.fuxiq.at/?lang=en" target="_blank" rel="noopener">Visit the site &rarr;</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-img">
+            <img src="/images/oebb-mcp.jpg" alt="Concourse of a modern railway station" loading="lazy">
+            <figcaption>Photo by <a href="https://unsplash.com/@vtoesca" target="_blank" rel="noopener">Vincent Toesca</a> / Unsplash</figcaption>
+          </figure>
+          <div class="project-body">
+            <div class="project-badge">Personal &middot; Prototype</div>
+            <h3>ÖBB MCP Server</h3>
+            <p>A Model Context Protocol server for Austrian Railways. It gives Claude and other MCP-capable assistants three tools &mdash; station search, journey planning and station boards &mdash; so a travel question can be answered against live timetable data instead of a training snapshot.</p>
+            <div class="project-meta">
+              <div class="project-meta-row">
+                <span class="project-meta-label">Question</span>
+                <span class="project-meta-value">What does an LLM assistant actually need in order to answer a real travel question, and how much of that fits into a small MCP tool surface?</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Methods</span>
+                <span class="project-meta-value">Python MCP server, integration against the ÖBB timetable service, tool design for station search, journey planning and departure boards, handling of real-time connection data.</span>
+              </div>
+              <div class="project-meta-row">
+                <span class="project-meta-label">Outcome</span>
+                <span class="project-meta-value">Working MCP server usable from any MCP-capable assistant for live Austrian rail queries.</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">MCP</span>
+              <span class="ptag">Python</span>
+              <span class="ptag">LLM Tooling</span>
+              <span class="ptag">API Integration</span>
+            </div>
           </div>
         </article>
 
@@ -1374,7 +1406,7 @@
             <img src="/images/intelligentliving.jpg" alt="A dark stone facade with the line &quot;Your home can do more than wait for commands&quot;" loading="lazy">
           </figure>
           <div class="project-body">
-            <div class="project-badge">Concept &middot; Ongoing</div>
+            <div class="project-badge">Personal &middot; Concept</div>
             <h3>IntelligentLiving</h3>
             <p>A home that understands situations instead of waiting for commands, and takes the small everyday decisions off your hands. The goal is not more smart home &mdash; it is less for you to think about: no setting things in the morning, no checking whether everything is switched off, no app for every part of the house, no rules for you to maintain.</p>
             <div class="project-meta">
@@ -1402,67 +1434,35 @@
         </article>
 
         <article class="project-card">
-          <figure class="project-img">
-            <img src="/images/fuxiq.jpg" alt="Crumpled store receipt on a white surface" loading="lazy">
-            <figcaption>Photo by <a href="https://unsplash.com/@ml1989" target="_blank" rel="noopener">Michael Walter</a> / Unsplash</figcaption>
+          <figure class="project-img is-shot">
+            <img src="/images/everyway.jpg" alt="The EveryWay concept demo, with six route profiles and a step-free alternative around a broken lift" loading="lazy">
           </figure>
           <div class="project-body">
-            <div class="project-badge">fuxiq &middot; In development</div>
-            <h3>Shopping Intelligence Platform</h3>
-            <p>A consumer platform that turns grocery receipts into a household demand profile, then uses that profile to surface offers that are genuinely better for that household, plan shopping trips and show where the money actually goes. The receipt is the hard part: everything downstream depends on the line items being right.</p>
+            <div class="project-badge">Personal &middot; Concept</div>
+            <h3>EveryWay</h3>
+            <p>A route can work on the map and still be impassable in reality. A single broken lift is not a minor inconvenience &mdash; if it is the only step-free access to a station, the route does not get longer, it disappears. EveryWay plans journeys that already know the current state of the infrastructure and reroute around it before somebody is standing in front of the problem.</p>
             <div class="project-meta">
               <div class="project-meta-row">
                 <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">Can a household&rsquo;s own receipts produce a demand profile precise enough to find offers that are genuinely better for that household &mdash; and how do you know when an extracted receipt is trustworthy enough to build on?</span>
+                <span class="project-meta-value">What does a routing system need to know &mdash; about the network&rsquo;s current state and about the person travelling &mdash; before its shortest path is actually a usable path?</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Austrian receipts carry a fiscal QR code with a cryptographically signed total, which the pipeline treats as a ground-truth oracle instead of trusting the model&rsquo;s own output. Perspective-corrected cropping and OCR feed a structured extraction; where the extracted total disagrees with the signed one by more than a cent, a second model runs with the signed total injected as a hint. A supervision interface exposes every intermediate stage &mdash; crop, decoded code, OCR text, extracted data &mdash; so a failure can be attributed to a step rather than to the pipeline as a whole.</span>
+                <span class="project-meta-value">Six combinable need profiles &mdash; step-free, vision, hearing, stamina, low-stimulus and simple routes &mdash; instead of one accessibility filter; static infrastructure from OpenStreetMap tagging joined with operator real-time disruption feeds and community reports that carry confirmation and expiry; participatory development with self-advocacy organisations, and EN 301 549 from the first line rather than at acceptance testing.</span>
               </div>
               <div class="project-meta-row">
                 <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">An extraction pipeline with a built-in correctness signal: for each receipt it can state whether the result reconciles against a signed total, rather than reporting a confidence score. Receipt extraction is the phase in progress; the demand profile and offer matching build on it.</span>
+                <span class="project-meta-value">A documented concept: the data already exists and is openly licensed &mdash; the work is in connecting it. Gap analysis against Wheelmap, operator lift-status services and academic OSM routing prototypes shows nobody joins static infrastructure, multi-operator real-time status and community knowledge into one continuous door-to-destination route. Positioned against existing obligations (UN CRPD Art. 9, National Action Plan on Disability 2022&ndash;2030, BaFG), with the open points &mdash; advisory board, first user research &mdash; stated rather than hidden. One building block is already specified in detail: beacon-guided wayfinding for the places where GPS gives up, with the accessibility graph held offline on the device, reports tied to a confirmed beacon so that they carry weight, and the WU Vienna campus as the first pilot area &mdash; small enough to survey, public, and mixing indoor and outdoor space.</span>
               </div>
             </div>
             <div class="project-tags">
-              <span class="ptag">Document Extraction</span>
-              <span class="ptag">LLM Validation</span>
-              <span class="ptag">OCR</span>
-              <span class="ptag">Structured Output</span>
-              <span class="ptag">Consumer Data</span>
+              <span class="ptag">Accessibility</span>
+              <span class="ptag">Routing</span>
+              <span class="ptag">Real-time Data</span>
+              <span class="ptag">OpenStreetMap</span>
+              <span class="ptag">Participatory Design</span>
             </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <figure class="project-img">
-            <img src="/images/oebb-mcp.jpg" alt="Concourse of a modern railway station" loading="lazy">
-            <figcaption>Photo by <a href="https://unsplash.com/@vtoesca" target="_blank" rel="noopener">Vincent Toesca</a> / Unsplash</figcaption>
-          </figure>
-          <div class="project-body">
-            <div class="project-badge">Personal &middot; Ongoing</div>
-            <h3>ÖBB MCP Server</h3>
-            <p>A Model Context Protocol server for Austrian Railways. It gives Claude and other MCP-capable assistants three tools &mdash; station search, journey planning and station boards &mdash; so a travel question can be answered against live timetable data instead of a training snapshot.</p>
-            <div class="project-meta">
-              <div class="project-meta-row">
-                <span class="project-meta-label">Question</span>
-                <span class="project-meta-value">What does an LLM assistant actually need in order to answer a real travel question, and how much of that fits into a small MCP tool surface?</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Methods</span>
-                <span class="project-meta-value">Python MCP server, integration against the ÖBB timetable service, tool design for station search, journey planning and departure boards, handling of real-time connection data.</span>
-              </div>
-              <div class="project-meta-row">
-                <span class="project-meta-label">Outcome</span>
-                <span class="project-meta-value">Working MCP server usable from any MCP-capable assistant for live Austrian rail queries.</span>
-              </div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">MCP</span>
-              <span class="ptag">Python</span>
-              <span class="ptag">LLM Tooling</span>
-              <span class="ptag">API Integration</span>
-            </div>
+            <a class="project-link" href="https://everyway.fuxiq.at/?lang=en" target="_blank" rel="noopener">Visit the site &rarr;</a>
           </div>
         </article>
 
