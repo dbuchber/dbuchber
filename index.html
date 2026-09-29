@@ -598,7 +598,6 @@
       height: 7px;
       border-radius: 50%;
       background: #34c759;
-      animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
@@ -611,6 +610,9 @@
       line-height: 1.72;
       max-width: 700px;
       margin-bottom: 28px;
+    }
+    .thesis-desc p + p {
+      margin-top: 14px;
     }
 
     .thesis-grid {
@@ -1052,8 +1054,8 @@
       </div>
 
       <div class="thesis-callout fade-up">
-        <div class="thesis-callout-label">Currently &mdash; Bachelor Thesis</div>
-        <p>Researching multi-agent Knowledge Graph traversal as a grounding mechanism for LLM-based systems. <a href="#thesis" style="color:var(--accent); font-weight:600;">Read more &darr;</a></p>
+        <div class="thesis-callout-label">Bachelor Thesis</div>
+        <p>Multi-agent Knowledge Graph traversal as a grounding mechanism for LLM-based question answering &mdash; completed with the grade Sehr gut (1). <a href="#thesis" style="color:var(--accent); font-weight:600;">Read more &darr;</a></p>
       </div>
     </div>
   </section>
@@ -1476,7 +1478,7 @@
       <div class="section-header fade-up">
         <div class="eyebrow">Research</div>
         <h2>Bachelor Thesis.</h2>
-        <p class="section-sub">Grounding medical answers in a human-curated knowledge graph &mdash; at WU Vienna.</p>
+        <p class="section-sub">Multi-agent knowledge graph traversal against hallucination &mdash; at WU Vienna.</p>
       </div>
 
       <div class="thesis-card fade-up">
@@ -1487,13 +1489,17 @@
           </div>
           <div class="status-badge">
             <span class="status-dot"></span>
-            In Progress &middot; 2026
+            Completed &middot; 2026 &middot; Grade: Sehr gut (1)
           </div>
         </div>
 
-        <p class="thesis-desc">
-          LLMs can sound confident and be completely wrong. This thesis grounds medical question answering in a graph built from human-curated sources rather than extracted by a model &mdash; because a model-built graph puts hallucination into the substrate itself, before a question is ever asked. Sub-agents traverse the complete Wikidata truthy graph in parallel from different entry points, and a main agent selects the evidence the answer is built on. Accuracy and faithfulness are scored separately, so a system that is right for the wrong reasons does not count as a success.
-        </p>
+        <div class="eyebrow" style="margin-bottom: 8px;">Abstract</div>
+        <div class="thesis-desc">
+          <p>Large language models produce fluent answers that nothing supports &mdash; hallucination. This thesis asks whether an open-weight model that walks a knowledge graph with several parallel agents answers more faithfully to its evidence than three text-based approaches: one-shot prompting, two-step retrieval-augmented generation (RAG) and agentic RAG. The system splits the question into clauses, finds an entry entity for each in a vector index over the graph, lets parallel sub-agents walk outward from those entries, consulting the language model only every few hops, and answers from the best sub-agent&rsquo;s subgraph. Its premise is that of the Wikipedia game: the entry need not be exact, because the walk will pick up the trail.</p>
+          <p>The evaluation has two phases on Wikidata: a medical subgraph against an external benchmark, then a skeleton of the complete graph against question sets it answers by construction, once with an entry index that contains the answer entities and once with the system&rsquo;s own.</p>
+          <p>The intended outcome &mdash; more faithful at comparable accuracy and lower cost &mdash; is not reached. The first phase separates the graph system from nothing. In the second, a single-agent walk given a correct entry is more accurate than one-shot prompting and agentic RAG and about as faithful as the text baselines; with the system&rsquo;s own index neither graph arm beats the ungrounded baseline, because most walks return no fact. The graph does not mislead; it is absent. The walk picks up the trail only when it starts beside it, and the multi-agent layer adds no significant accuracy at many times the cost.</p>
+          <p>The contribution is a located bottleneck &mdash; entity linking against a whole-graph index &mdash; and its repair: looking the question&rsquo;s names up in the graph&rsquo;s own label table, which lifts the single walk close to the diagnostic ceiling at fewer model calls. The result vindicates the traversal, not the system built around it.</p>
+        </div>
 
         <div class="thesis-grid">
           <div class="thesis-col">
@@ -1501,7 +1507,7 @@
             <ul>
               <li>Hybrid seeded traversal with parallel sub-agents</li>
               <li>Accuracy and faithfulness scored separately</li>
-              <li>Human-curated vs. LLM-extracted graph substrates</li>
+              <li>Entity linking as the located bottleneck</li>
               <li>Compared against one-shot prompting, two-step RAG and agentic RAG</li>
             </ul>
           </div>

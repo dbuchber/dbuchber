@@ -17,14 +17,14 @@
 
 > **"Geht ned? Gibts ned!"** — Austrian for: there’s always a solution.
 
-> Currently writing my bachelor thesis on the synergy between **Knowledge Graphs** and **LLMs**.
+> Completed my bachelor thesis on **multi-agent Knowledge Graph traversal** against LLM hallucination (grade: Sehr gut).
 
 ## Quick Links
 - 💼 LinkedIn: https://www.linkedin.com/in/daniel-buchberger-490758178/
 - 🌐 Website / Portfolio: https://danielbuchberger.at
 
 ## What I'm working on
-- 🎓 **Bachelor Thesis:** Knowledge Graphs × LLMs (retrieval, grounding, reasoning, hybrid architectures)
+- 🎓 **Bachelor Thesis (completed):** Reducing Hallucinations in LLM-Based Question Answering through Hybrid Multi-Agent Knowledge Graph Traversal
 - 🧩 **SAP Consulting:** Materials Management (MM) & Production Planning (PP)
 - 🏠 **HomeAssistant + Selfhosting:** automations, Docker services, networking experiments
 - 🤖 **Local LLMs:** running models locally, testing workflows and tooling
