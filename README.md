@@ -1,6 +1,6 @@
 ## Hi there, I'm Daniel 👋
 
-📍**Vienna ↔ Steyr** | 👨‍🎓**BSc Business Informatics @ WU Vienna** | 📊**Data Science & Production Management** | 💼**Junior SAP Logistics Consultant**
+📍**Vienna ↔ Steyr** | 👨‍🎓**BSc Business Informatics, now MSc Digital Economy @ WU Vienna** | 📊**Data Science & Production Management** | 💼**Junior SAP Logistics Consultant**
 
 ![Codex](https://img.shields.io/badge/-Codex-121212?style=flat-square&logo=openai)
 ![Claude](https://img.shields.io/badge/-Claude-000000?style=flat-square&logo=anthropic)
